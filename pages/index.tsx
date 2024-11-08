@@ -71,7 +71,8 @@ export default function Home() {
   const [indexAposta, setIndexAposta] = useState(0);
 
   const fazerJogada = () => {
-    if (caixaFinal < valoresApostas[indexAposta]) return setPerdeu(true);
+    if (caixaFinal < valoresApostas[indexAposta] || perdeu)
+      return setPerdeu(true);
 
     setRodadas((r) => r + 1);
     cassino.shift();
