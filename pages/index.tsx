@@ -1,6 +1,6 @@
 "use client";
 import { CurrencyInput } from "react-currency-mask";
-import { Button, Checkbox, FormControlLabel, TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import { useState } from "react";
 
 export default function Home() {
@@ -11,23 +11,23 @@ export default function Home() {
     if (zero && value === 0) return ["verde", 0];
     return [value % 2 ? "preto" : "vermelho", value];
   };
-  const mudarCorSeguencia = (i) => {
-    setASeguencia(
-      aSeguencia.map(([cor, val], index) =>
-        index === i
-          ? cor === "preto"
-            ? ["vermelhor", 1]
-            : ["preto", 2]
-          : [cor, val]
-      )
-    );
-  };
+  // const mudarCorSeguencia = (i) => {
+  //   setASeguencia(
+  //     aSeguencia.map(([cor, val], index) =>
+  //       index === i
+  //         ? cor === "preto"
+  //           ? ["vermelhor", 1]
+  //           : ["preto", 2]
+  //         : [cor, val]
+  //     )
+  //   );
+  // };
 
   const caixaInicial = 40000;
   const [caixa, setCaixa] = useState(caixaInicial);
   const [caixaFinal, setCaixaFinal] = useState(caixaInicial);
   const [rodadas, setRodadas] = useState(0);
-  const [aguardar, setAguardar] = useState(false);
+  // const [aguardar, setAguardar] = useState(false);
   const [aSeguencia, setASeguencia] = useState([
     gerarCor(),
     gerarCor(),
