@@ -72,9 +72,7 @@ export default function Home() {
 
   const fazerJogada = () => {
     if (perdeu) return;
-    if (!gabarito[indexAposta]) setIndexAposta(0);
     if (caixaFinal < valoresApostas[indexAposta]) {
-      setIndexAposta(0);
       return setPerdeu(true);
     }
 
@@ -86,7 +84,7 @@ export default function Home() {
     const ganhou = numeroSorteado[0] === gabarito[indexAposta][0];
     if (!ganhou) {
       setCaixaFinal((r) => r - valoresApostas[indexAposta]);
-      if (indexAposta < 14) setIndexAposta((r) => r + 1);
+      if (indexAposta < 13) setIndexAposta((r) => r + 1);
       else setIndexAposta(0);
     } else {
       setCaixaFinal((r) => r + valoresApostas[indexAposta]);
